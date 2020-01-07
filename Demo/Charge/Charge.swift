@@ -1,24 +1,22 @@
 //
-//  AccountAdapter.swift
+//  Charge.swift
 //  Demo
 //
-//  Created by zengyazhi on 2020/1/3.
+//  Created by zengyazhi on 2020/1/6.
 //  Copyright © 2020 zengyazhi. All rights reserved.
 //
 
 import UIKit
+import SnapKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class Charge: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
-        self.title = "账单列表"
-//        self.navigationController?.navigationBar.delegate = self
-        
+        self.title = "充值"
         let table = UITableView(frame: view.bounds)
         view.addSubview(table)
         table.dataSource = self
         table.delegate = self
-        table.register(AccountCell.classForCoder(), forCellReuseIdentifier: identifier)
+        table.register(ChargeCell.classForCoder(), forCellReuseIdentifier: identifier)
         table.separatorStyle = .none
     }
     
@@ -32,6 +30,5 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         return cell!
     }
-    
     
 }

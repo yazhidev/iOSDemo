@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,13 @@
 		596A14E723BED3430053B339 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A14E623BED3430053B339 /* Extension.swift */; };
 		596A14E923BEE1800053B339 /* MyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596A14E823BEE1800053B339 /* MyStoryboard.storyboard */; };
 		596A14EB23BEE37C0053B339 /* MyStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A14EA23BEE37C0053B339 /* MyStory.swift */; };
+		5970FFD923C42C6C00260382 /* ChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970FFD823C42C6C00260382 /* ChargeCell.swift */; };
+		5991CA1923C2CA770017D189 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1823C2CA770017D189 /* View1.swift */; };
+		5991CA1B23C2CDF50017D189 /* View2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1A23C2CDF50017D189 /* View2.swift */; };
+		5991CA1E23C3025A0017D189 /* Charge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1D23C3025A0017D189 /* Charge.swift */; };
+		5991CA2023C316FB0017D189 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1F23C316FB0017D189 /* PriceCell.swift */; };
+		5991CA2223C319D10017D189 /* PriceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA2123C319D10017D189 /* PriceGrid.swift */; };
+		5991CA2623C326C20017D189 /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA2523C326C20017D189 /* ColumnFlowLayout.swift */; };
 		59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */; };
 		59ED15ED23AB46CF00A2E996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED15EC23AB46CF00A2E996 /* SceneDelegate.swift */; };
 		59ED15EF23AB46CF00A2E996 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED15EE23AB46CF00A2E996 /* ContentView.swift */; };
@@ -57,6 +64,13 @@
 		596A14E623BED3430053B339 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		596A14E823BEE1800053B339 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyStoryboard.storyboard; sourceTree = "<group>"; };
 		596A14EA23BEE37C0053B339 /* MyStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStory.swift; sourceTree = "<group>"; };
+		5970FFD823C42C6C00260382 /* ChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeCell.swift; sourceTree = "<group>"; };
+		5991CA1823C2CA770017D189 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
+		5991CA1A23C2CDF50017D189 /* View2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View2.swift; sourceTree = "<group>"; };
+		5991CA1D23C3025A0017D189 /* Charge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charge.swift; sourceTree = "<group>"; };
+		5991CA1F23C316FB0017D189 /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		5991CA2123C319D10017D189 /* PriceGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceGrid.swift; sourceTree = "<group>"; };
+		5991CA2523C326C20017D189 /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		59ED15E723AB46CF00A2E996 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59ED15EC23AB46CF00A2E996 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +142,27 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		5991CA1323C2CA480017D189 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				5991CA1823C2CA770017D189 /* View1.swift */,
+				5991CA1A23C2CDF50017D189 /* View2.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		5991CA1C23C302270017D189 /* Charge */ = {
+			isa = PBXGroup;
+			children = (
+				5991CA1D23C3025A0017D189 /* Charge.swift */,
+				5991CA1F23C316FB0017D189 /* PriceCell.swift */,
+				5991CA2123C319D10017D189 /* PriceGrid.swift */,
+				5991CA2523C326C20017D189 /* ColumnFlowLayout.swift */,
+				5970FFD823C42C6C00260382 /* ChargeCell.swift */,
+			);
+			path = Charge;
+			sourceTree = "<group>";
+		};
 		59ED15DE23AB46CF00A2E996 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +188,8 @@
 		59ED15E923AB46CF00A2E996 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				5991CA1C23C302270017D189 /* Charge */,
+				5991CA1323C2CA480017D189 /* Route */,
 				596A14E123BECD0D0053B339 /* TableView */,
 				593BBE2723BDCD5B00A65BFF /* Model */,
 				593BBE2423BD8A5100A65BFF /* MyFile */,
@@ -203,7 +240,6 @@
 				E1E979AF0B600F41B9007CBA /* Pods-Demo.debug.xcconfig */,
 				277FC38A08B095E31D33144E /* Pods-Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -392,15 +428,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				596A14E323BECD280053B339 /* TableCell.swift in Sources */,
+				5991CA2623C326C20017D189 /* ColumnFlowLayout.swift in Sources */,
 				593BBE3223BDD57000A65BFF /* Counter.swift in Sources */,
 				592701BD23BD7BA300F9321F /* Myhaha.swift in Sources */,
 				59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */,
+				5991CA1923C2CA770017D189 /* View1.swift in Sources */,
 				596A14E723BED3430053B339 /* Extension.swift in Sources */,
 				593BBE2E23BDCDA600A65BFF /* UserData.swift in Sources */,
+				5991CA1E23C3025A0017D189 /* Charge.swift in Sources */,
+				5991CA2223C319D10017D189 /* PriceGrid.swift in Sources */,
 				592701BB23BB555200F9321F /* MyImage.swift in Sources */,
+				5970FFD923C42C6C00260382 /* ChargeCell.swift in Sources */,
+				5991CA2023C316FB0017D189 /* PriceCell.swift in Sources */,
 				59ED15ED23AB46CF00A2E996 /* SceneDelegate.swift in Sources */,
 				596A14E523BECD540053B339 /* TableViewController.swift in Sources */,
 				593BBE2623BD914E00A65BFF /* MyRow.swift in Sources */,
+				5991CA1B23C2CDF50017D189 /* View2.swift in Sources */,
 				59ED15EF23AB46CF00A2E996 /* ContentView.swift in Sources */,
 				596A14EB23BEE37C0053B339 /* MyStory.swift in Sources */,
 			);
