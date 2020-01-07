@@ -12,6 +12,7 @@ class ColumnFlowLayout: UICollectionViewFlowLayout {
     
     let count: Int
     let heightScale: CGFloat
+    var height: CGFloat = 0
     
     init(count: Int, heightScale: CGFloat = 1, minimumInteritemSpacing: CGFloat = 0, minimumLineSpacing: CGFloat = 0, sectionInset: UIEdgeInsets = .zero) {
         self.count = count
@@ -32,7 +33,6 @@ class ColumnFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return }
         let marginsAndInsets = sectionInset.left + sectionInset.right + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(count - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(count)).rounded(.down)
-        print(heightScale)
         itemSize = CGSize(width: itemWidth, height: itemWidth * heightScale)
     }
 
@@ -41,5 +41,7 @@ class ColumnFlowLayout: UICollectionViewFlowLayout {
         context.invalidateFlowLayoutDelegateMetrics = newBounds.size != collectionView?.bounds.size
         return context
     }
+ 
+    
     
 }

@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class Charge: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     override func viewDidLoad() {
         self.title = "充值"
         let table = UITableView(frame: view.bounds)
@@ -17,18 +18,26 @@ class Charge: UIViewController, UITableViewDataSource, UITableViewDelegate {
         table.dataSource = self
         table.delegate = self
         table.register(ChargeCell.classForCoder(), forCellReuseIdentifier: identifier)
+        table.register(ChargeTypeCell.classForCoder(), forCellReuseIdentifier: chargeTypeCell)
         table.separatorStyle = .none
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     let identifier = "TableCell"
+    let chargeTypeCell = "chargeTypeCell"
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        return cell!
+        switch indexPath.row {
+        case 0:
+            return tableView.dequeueReusableCell(withIdentifier: identifier)!
+        case 1:
+            return tableView.dequeueReusableCell(withIdentifier: chargeTypeCell)!
+        default:
+            return tableView.dequeueReusableCell(withIdentifier: identifier)!
+        }
     }
     
 }

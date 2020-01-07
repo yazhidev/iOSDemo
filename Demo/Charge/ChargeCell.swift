@@ -11,7 +11,7 @@ import UIKit
 class ChargeCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 6
     }
     
     let PRICE_CELL_ID = "priceCell"
@@ -22,34 +22,38 @@ class ChargeCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDat
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let layout = UICollectionViewFlowLayout()
-        
+//        let layout = UICollectionViewFlowLayout()
+        let layout = ColumnFlowLayout(count: 3, heightScale: 0.66, minimumInteritemSpacing: 38, minimumLineSpacing: 20, sectionInset: UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15))
         layout.scrollDirection = .vertical
-        layout.estimatedItemSize = CGSize(width: 100, height: 100)
         
-        let table = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
+        let table = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        let table = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
         
         table.delegate = self
         table.dataSource = self
-        table.isScrollEnabled = true
+        table.isScrollEnabled = false
         table.register(PriceCell.self, forCellWithReuseIdentifier: PRICE_CELL_ID)
-        table.backgroundColor = UIColor.blue
+        table.backgroundColor = UIColor.white
         
-        let tv = UILabel()
+        let tv = PaddingLabel()
+        tv.paddingTop = 15
+        tv.paddingLeft = 15
+        tv.paddingBottom = 4
         self.contentView.addSubview(tv)
-        tv.text = "hahaha"
-        tv.backgroundColor = UIColor.green
+        tv.text = "请选择充值金额"
+        tv.textColor = UIColor(hexCode: "#222222")
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.backgroundColor = UIColor(hexCode: "#f7f7f7")
         tv.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(30)
         }
         
         self.contentView.addSubview(table)
         table.snp.makeConstraints { (make) in
             make.top.equalTo(tv.snp.bottom)
             make.left.right.equalToSuperview()
-            make.height.equalTo(100)
             make.bottom.equalTo(0)
+            make.height.equalTo(68 * 2 + 40 + 10)
         }
     }
     
