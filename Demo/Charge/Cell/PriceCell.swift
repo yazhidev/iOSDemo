@@ -26,7 +26,7 @@ class PriceCell: UICollectionViewCell {
         let price = UILabel()
         price.textColor = UIColor(hexCode: "#03B1FF")
         price.text = "2000元"
-        price.font = UIFont.systemFont(ofSize: 20)
+        price.font = UIFont.boldSystemFont(ofSize: 20)
         self.addSubview(price)
         price.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -36,7 +36,7 @@ class PriceCell: UICollectionViewCell {
         let now = UILabel()
         now.textColor = UIColor(hexCode: "#03B1FF")
         now.text = "售价1000元"
-        now.font = UIFont.systemFont(ofSize: 12)
+        now.font = UIFont.systemFont(ofSize: 15)
         self.addSubview(now)
         now.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

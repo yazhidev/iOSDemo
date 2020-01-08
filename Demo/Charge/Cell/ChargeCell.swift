@@ -38,11 +38,11 @@ class ChargeCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDat
         let tv = PaddingLabel()
         tv.paddingTop = 15
         tv.paddingLeft = 15
-        tv.paddingBottom = 4
+        tv.paddingBottom = 8
         self.contentView.addSubview(tv)
         tv.text = "请选择充值金额"
         tv.textColor = UIColor(hexCode: "#222222")
-        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.font = UIFont.boldSystemFont(ofSize: 16)
         tv.backgroundColor = UIColor(hexCode: "#f7f7f7")
         tv.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
@@ -53,8 +53,9 @@ class ChargeCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDat
             make.top.equalTo(tv.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(0)
-            make.height.equalTo(68 * 2 + 40 + 10)
+            make.height.equalTo(68 * 2 + 40 + 20)
         }
+        
     }
     
     required init?(coder: NSCoder) {

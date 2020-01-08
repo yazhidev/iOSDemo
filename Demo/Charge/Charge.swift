@@ -17,27 +17,40 @@ class Charge: UIViewController, UITableViewDataSource, UITableViewDelegate {
         view.addSubview(table)
         table.dataSource = self
         table.delegate = self
-        table.register(ChargeCell.classForCoder(), forCellReuseIdentifier: identifier)
+        table.register(ChargeCell.classForCoder(), forCellReuseIdentifier: priceCell)
         table.register(ChargeTypeCell.classForCoder(), forCellReuseIdentifier: chargeTypeCell)
+        table.register(HeaderCell.classForCoder(), forCellReuseIdentifier: headerCell)
+        table.register(BottomCell.classForCoder(), forCellReuseIdentifier: bottomCell)
         table.separatorStyle = .none
+        table.backgroundColor = UIColor(hexCode: "#F7F7F7")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
-    let identifier = "TableCell"
+    let priceCell = "priceCell"
     let chargeTypeCell = "chargeTypeCell"
+    let headerCell = "headerCell"
+    let bottomCell = "bottomCell"
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         switch indexPath.row {
         case 0:
-            return tableView.dequeueReusableCell(withIdentifier: identifier)!
+            cell = tableView.dequeueReusableCell(withIdentifier: headerCell)!
         case 1:
-            return tableView.dequeueReusableCell(withIdentifier: chargeTypeCell)!
+            cell = tableView.dequeueReusableCell(withIdentifier: priceCell)!
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: chargeTypeCell)!
+        case 3:
+            cell = tableView.dequeueReusableCell(withIdentifier: bottomCell)!
         default:
-            return tableView.dequeueReusableCell(withIdentifier: identifier)!
+            cell = tableView.dequeueReusableCell(withIdentifier: bottomCell)!
         }
+        cell.selectionStyle = .none
+        return cell
     }
+    
     
 }

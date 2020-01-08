@@ -15,7 +15,7 @@ class ChargeHeader: UIView {
         let tv = PaddingLabel()
         tv.paddingTop = 58
         tv.paddingLeft = 20
-        tv.paddingBottom = 10
+        tv.paddingBottom = 20
         tv.font = UIFont.boldSystemFont(ofSize: 30)
         tv.textColor = UIColor.white
         tv.text = "平台通用余额充值"
@@ -39,20 +39,18 @@ class ChargeHeader: UIView {
     func setUp() {
         self.addSubview(bg)
         self.addSubview(title)
-        self.backgroundColor = UIColor.blue
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        print("layoutSubviews \(title.bounds.height)")
         title.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         bg.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
             make.bottom.equalTo(title.snp.bottom)
         }
-        
     }
     
     

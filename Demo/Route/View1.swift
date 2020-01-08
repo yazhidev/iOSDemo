@@ -43,7 +43,7 @@ class View1: UIViewController {
     }
     
     @objc func gotoCharge() {
-        self.navigationController?.pushViewController(PriceGrid(), animated: true)
+        self.navigationController?.pushViewController(Charge(), animated: true)
     }
     
     @objc func gotoAccountList() {
