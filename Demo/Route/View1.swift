@@ -18,26 +18,29 @@ class View1: UIViewController {
         
         let gotoAccount = UIButton()
         gotoAccount.setTitle("账单列表", for: .normal)
-        gotoAccount.backgroundColor = UIColor.red
+        gotoAccount.backgroundColor = AppBlue
         gotoAccount.addTarget(self, action: #selector(gotoAccountList), for: .touchUpInside)
         self.view.addSubview(gotoAccount)
         gotoAccount.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(50)
-            make.top.equalTo(100)
+            make.top.equalTo(30)
         }
         
         let gotoChargeBtn = UIButton()
         gotoChargeBtn.setTitle("充值", for: .normal)
-        gotoChargeBtn.backgroundColor = UIColor.red
+        gotoChargeBtn.backgroundColor = AppBlue
         gotoChargeBtn.addTarget(self, action: #selector(gotoCharge), for: .touchUpInside)
+        gotoChargeBtn.layer.masksToBounds = true
+        
+        gotoChargeBtn.layer.borderColor = AppBlue.cgColor
         self.view.addSubview(gotoChargeBtn)
         gotoChargeBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(50)
-            make.top.equalTo(gotoAccount.snp.bottom).offset(20)
+            make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
         
     }

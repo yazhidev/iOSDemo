@@ -26,3 +26,5 @@ extension UIColor {
         }
     }
 }
+
+let AppBlue = UIColor(hexCode: "#03B1FF")

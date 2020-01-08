@@ -18,10 +18,10 @@ class PriceCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(hexCode: "#03B1FF").cgColor
         
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowRadius = 3
+//        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        self.layer.shadowOpacity = 0.8
+//        self.layer.shadowColor = UIColor.gray.cgColor
+//        self.layer.shadowRadius = 3
         
         let price = UILabel()
         price.textColor = UIColor(hexCode: "#03B1FF")

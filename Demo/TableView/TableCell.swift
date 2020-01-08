@@ -13,6 +13,9 @@ class AccountCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+//        contentView.backgroundColor = UIColor.red
+        
         let title = UILabel()
         title.text = "测试代码测试测试代码测试测试代码测试测试代码测试测试代码测试"
         title.font = UIFont.systemFont(ofSize: 16)

@@ -43,7 +43,6 @@ class ChargeHeader: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("layoutSubviews \(title.bounds.height)")
         title.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
