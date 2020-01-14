@@ -17,8 +17,8 @@ class AccountCell: UITableViewCell {
 //        contentView.backgroundColor = UIColor.red
         
         let title = UILabel()
-        title.text = "测试代码测试测试代码测试测试代码测试测试代码测试测试代码测试"
-        title.font = UIFont.systemFont(ofSize: 16)
+        title.text = "家有学霸手写板"
+        title.font = UIFont.boldSystemFont(ofSize: 16)
         title.textColor = UIColor(hexCode: "#222222")
         title.numberOfLines = 1
         contentView.addSubview(title)

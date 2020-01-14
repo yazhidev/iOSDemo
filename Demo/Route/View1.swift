@@ -42,8 +42,14 @@ class View1: UIViewController {
             make.height.equalTo(50)
             make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
-        
+
+        ServiceConfigCenter.instance.getConfig(.errorBook, {(result: String) in
+            print(result)
+        }, {(err) in
+            print(err)
+        })
     }
+
     
     @objc func gotoCharge() {
         self.navigationController?.pushViewController(Charge(), animated: true)
@@ -51,5 +57,27 @@ class View1: UIViewController {
     
     @objc func gotoAccountList() {
         self.navigationController?.pushViewController(TableViewController(), animated: true)
+    }
+
+}
+
+public protocol MyPro {
+    var str: String { get }
+}
+
+class Pro1: MyPro {
+    var str: String = "111"
+}
+
+class Pro2: MyPro {
+    var str: String = "222"
+}
+
+@available(iOS 13.0.0, *)
+func test(_ type: Bool) -> some MyPro {
+    if(type) {
+        return Pro1()
+    } else {
+        return Pro1()
     }
 }
