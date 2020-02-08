@@ -24,8 +24,12 @@ class View1: UIViewController {
         //        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.edgesForExtendedLayout = []
         
-        data.append(Model("修改密码"))
-        data.append(Model("地址管理"))
+        data.append(Model("修改密码", {() -> () in
+            print("111")
+        }))
+        data.append(Model("设置", {() -> () in
+            print("222")
+        }))
         
         
         
@@ -60,13 +64,13 @@ class View1: UIViewController {
     @objc func updateData() {
         print("updateData")
         
-        data.append(Model("网络设置"))
-        data.append(Model("音频模式设置"))
-        data.append(Model("清除缓存"))
-        data.append(Model("平台使用指南"))
-        data.append(Model("关于家有学霸"))
-        data.append(Model("联系我们"))
-        data.append(Model("退出登录"))
+        //        data.append(Model("网络设置"))
+        //        data.append(Model("音频模式设置"))
+        //        data.append(Model("清除缓存"))
+        //        data.append(Model("平台使用指南"))
+        //        data.append(Model("关于家有学霸"))
+        //        data.append(Model("联系我们"))
+        //        data.append(Model("退出登录"))
         
         adapter.performUpdates(animated: true)
     }

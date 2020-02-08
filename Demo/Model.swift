@@ -8,7 +8,10 @@
 
 import IGListKit
 
+typealias Click = () -> ()
+
 final class Model: ListDiffable {
+    
     func diffIdentifier() -> NSObjectProtocol {
         return title as NSObjectProtocol
     }
@@ -21,8 +24,10 @@ final class Model: ListDiffable {
     }
     
     let title: String
+    let click: Click
     
-    init(_ title: String) {
+    init(_ title: String, _ click: @escaping Click) {
         self.title = title
+        self.click = click
     }
 }

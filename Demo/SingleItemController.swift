@@ -8,7 +8,7 @@
 
 import IGListKit
 
-class SingleItemController: ListSectionController, UICollectionViewDelegate {
+class SingleItemController: ListSectionController {
     
     var data: Model?
     
@@ -36,5 +36,10 @@ class SingleItemController: ListSectionController, UICollectionViewDelegate {
         }
         data = model
     }
+ 
     
+    override func didSelectItem(at index: Int) {
+        print("click")
+        data?.click()
+    }
 }
