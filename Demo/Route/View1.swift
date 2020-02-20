@@ -42,12 +42,12 @@ class View1: UIViewController {
             make.height.equalTo(50)
             make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
-
-        ServiceConfigCenter.instance.getConfig(.errorBook, {(result: String) in
-            print(result)
-        }, {(err) in
-            print(err)
-        })
+//
+//        ServiceConfigCenter.instance.getConfig(.errorBook, {(result: String) in
+//            print(result)
+//        }, {(err) in
+//            print(err)
+//        })
     }
 
     

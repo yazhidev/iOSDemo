@@ -1,0 +1,60 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+require 'dingbot'
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :mytest do
+    # add actions here: https://docs.fastlane.tools/actions
+    puts "mytest do"
+    build_app(workspace: "Demo.xcworkspace", scheme: "Demo", export_method: "development")
+  end
+
+  desc "upload ipa to fir"
+  lane :upload2fir do
+    var = fir_cli(api_token: "1748b8ae90de698b97ae4fabc806d81e",  changelog: "Hello fir.im", specify_file_path: "Demo.ipa", need_release_id: true)
+    # https://fir.im/fg35?release_id=5e4d2d1423389f02ec088c01
+    # {:app_id=>"5e4d2d12b2eb4634a7d6170a", :release_id=>"5e4d2d1423389f02ec088c01", :short=>"fg35"}
+  end
+
+  desc "dingding robot notify"
+  lane :dingNotify do |options|
+    puts "----------dingNotify begin--------------------"
+    # 局部配置方式
+    DingBot.endpoint='https://oapi.dingtalk.com/robot/send'
+    DingBot.access_token = 'ef1f980da2ac4764bf00ff5dfe4cff58fd8769732f585653e0c5724dda567067'
+    message = DingBot::Message::Link.new(
+      "我就是我, 是不一样的烟火 值班",
+      '这个即将发布的新版本，创始人陈航（花名“无招”）称它为“红树林”。',
+      "https://fir.im/#{options[:short]}?release_id=#{options[:release_id]}",
+      'https://www.runoob.com/wp-content/uploads/2013/11/ruby-mini-logo.png'
+    )
+    var = DingBot.send_msg(message)
+    puts "Response：errcode: #{var['errcode']}, errmsg: #{var['errmsg']}"
+    # puts "Response #{response.code} #{response.message}: #{response.body}"
+  end
+
+  lane :auto do
+    result = upload2fir()
+    puts "-----"
+    puts result
+    dingNotify(short: result[:short], release_id: result[:release_id])
+    puts "---end__"
+  end
+    
+end
