@@ -51,20 +51,15 @@ class View1: UIViewController {
             make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
 
-        ServiceConfigCenter.instance.getTeacherBannerConfig({(result) in
-            print(result)
-        }, {(err) in
-            print(err)
-        })
     }
 
     
     @objc func gotoCharge() {
-        self.navigationController?.pushViewController(Charge(), animated: true)
+//        self.navigationController?.pushViewController(Charge(), animated: true)
     }
     
     @objc func gotoAccountList() {
-        self.navigationController?.pushViewController(TableViewController(), animated: true)
+//        self.navigationController?.pushViewController(TableViewController(), animated: true)
     }
 
 }
