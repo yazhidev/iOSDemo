@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import JYXBConfigCenter_swift
 
 class View1: UIViewController {
     override func viewDidLoad() {
@@ -17,7 +18,14 @@ class View1: UIViewController {
         self.edgesForExtendedLayout = []
         
         let gotoAccount = UIButton()
-        gotoAccount.setTitle("账单列表", for: .normal)
+        var title = ""
+        #if DEBUG
+        title = "DEBUG"
+        #else
+        title = "RELEASE"
+        #endif
+        
+        gotoAccount.setTitle(title, for: .normal)
         gotoAccount.backgroundColor = AppBlue
         gotoAccount.addTarget(self, action: #selector(gotoAccountList), for: .touchUpInside)
         self.view.addSubview(gotoAccount)
@@ -43,7 +51,7 @@ class View1: UIViewController {
             make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
 
-        ServiceConfigCenter.instance.getConfig(.errorBook, {(result: String) in
+        ServiceConfigCenter.instance.getTeacherBannerConfig({(result) in
             print(result)
         }, {(err) in
             print(err)
