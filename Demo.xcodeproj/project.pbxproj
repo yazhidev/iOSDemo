@@ -13,6 +13,11 @@
 		3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19224006EB400BD23E0 /* DocumentModel.swift */; };
 		3E0AF19524006EF800BD23E0 /* DocumentSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */; };
 		3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19624006F4200BD23E0 /* DocumentCell.swift */; };
+		3EA5F9A32400DCCE006DCD6D /* CreateLiveClassSucViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A22400DCCE006DCD6D /* CreateLiveClassSucViewController.swift */; };
+		3EA5F9A62400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A52400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift */; };
+		3EA5F9A82400E896006DCD6D /* HeadInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A72400E896006DCD6D /* HeadInfoModel.swift */; };
+		3EA5F9AA2400E8A7006DCD6D /* HeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A92400E8A7006DCD6D /* HeaderSectionController.swift */; };
+		3EA5F9AC2400E8B8006DCD6D /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9AB2400E8B8006DCD6D /* HeaderCell.swift */; };
 		42C075D72E575027D82F65B5 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE55BEBCB03387B7F61FD80 /* Pods_Demo.framework */; };
 		592D9A6723C5BBEA00EA701E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592D9A6623C5BBEA00EA701E /* Test.storyboard */; };
 		5991CA1923C2CA770017D189 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1823C2CA770017D189 /* View1.swift */; };
@@ -49,6 +54,11 @@
 		3E0AF19224006EB400BD23E0 /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
 		3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSectionController.swift; sourceTree = "<group>"; };
 		3E0AF19624006F4200BD23E0 /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
+		3EA5F9A22400DCCE006DCD6D /* CreateLiveClassSucViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassSucViewController.swift; sourceTree = "<group>"; };
+		3EA5F9A52400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassInfoCompletionViewController.swift; sourceTree = "<group>"; };
+		3EA5F9A72400E896006DCD6D /* HeadInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadInfoModel.swift; sourceTree = "<group>"; };
+		3EA5F9A92400E8A7006DCD6D /* HeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionController.swift; sourceTree = "<group>"; };
+		3EA5F9AB2400E8B8006DCD6D /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		592D9A6623C5BBEA00EA701E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		5991CA1823C2CA770017D189 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
 		59ED15E723AB46CF00A2E996 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,8 +112,27 @@
 				3E0AF19224006EB400BD23E0 /* DocumentModel.swift */,
 				3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */,
 				3E0AF19624006F4200BD23E0 /* DocumentCell.swift */,
+				3EA5F9A22400DCCE006DCD6D /* CreateLiveClassSucViewController.swift */,
 			);
 			path = CreateLiveClass;
+			sourceTree = "<group>";
+		};
+		3EA289AD24011F1200DE828A /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		3EA5F9A42400E81B006DCD6D /* CreateLiveClassInfoCompletion */ = {
+			isa = PBXGroup;
+			children = (
+				3EA5F9A52400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift */,
+				3EA5F9A72400E896006DCD6D /* HeadInfoModel.swift */,
+				3EA5F9A92400E8A7006DCD6D /* HeaderSectionController.swift */,
+				3EA5F9AB2400E8B8006DCD6D /* HeaderCell.swift */,
+			);
+			path = CreateLiveClassInfoCompletion;
 			sourceTree = "<group>";
 		};
 		59ED15DE23AB46CF00A2E996 = {
@@ -131,6 +160,8 @@
 		59ED15E923AB46CF00A2E996 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3EA289AD24011F1200DE828A /* Dialog */,
+				3EA5F9A42400E81B006DCD6D /* CreateLiveClassInfoCompletion */,
 				3E0AF18724003A5A00BD23E0 /* CreateLiveClass */,
 				5991CA1823C2CA770017D189 /* View1.swift */,
 				59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */,
@@ -363,11 +394,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */,
+				3EA5F9A32400DCCE006DCD6D /* CreateLiveClassSucViewController.swift in Sources */,
 				59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */,
 				3E0AF18D2400437A00BD23E0 /* XBCommonDialog.swift in Sources */,
 				3E0AF19524006EF800BD23E0 /* DocumentSectionController.swift in Sources */,
+				3EA5F9AA2400E8A7006DCD6D /* HeaderSectionController.swift in Sources */,
+				3EA5F9A82400E896006DCD6D /* HeadInfoModel.swift in Sources */,
 				3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */,
 				5991CA1923C2CA770017D189 /* View1.swift in Sources */,
+				3EA5F9AC2400E8B8006DCD6D /* HeaderCell.swift in Sources */,
+				3EA5F9A62400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift in Sources */,
 				3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */,
 				3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */,
 			);

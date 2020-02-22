@@ -65,16 +65,16 @@ class XBCommonDialog: UIViewController {
         btn.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
         return btn
     }()
-
+    
     
     private lazy var centerBtn: UIButton = {
-           let btn = UIButton()
-           btn.setTitle(centerBtnText, for: .normal)
-           btn.setTitleColor(UIColor(hex:"#35CBDB"), for: .normal)
-           btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-           btn.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-           return btn
-       }()
+        let btn = UIButton()
+        btn.setTitle(centerBtnText, for: .normal)
+        btn.setTitleColor(UIColor(hex:"#35CBDB"), for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        btn.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        return btn
+    }()
     
     private lazy var line: UIView = {
         let line = UIView()
@@ -96,16 +96,10 @@ class XBCommonDialog: UIViewController {
         tv.text = contentStr
         tv.textColor = "#333333".c
         tv.font = 15.f
+        tv.textAlignment = .center
         
         let lineHeight = CGFloat(10.0)
-        
-        let paragraphStye = NSMutableParagraphStyle()
-         //调整行间距
-        paragraphStye.lineSpacing = 9.0 - tv.font.lineHeight/4
-         paragraphStye.lineBreakMode = NSLineBreakMode.byWordWrapping
-        paragraphStye.alignment = .center
-        let attributedString = NSMutableAttributedString.init(string: contentStr, attributes: [NSAttributedString.Key.paragraphStyle:paragraphStye])
-         tv.attributedText = attributedString
+        tv.lineSpacing(9.0)
         return tv
     }()
     
@@ -172,17 +166,17 @@ class XBCommonDialog: UIViewController {
             }
         }
         
-//        bg.addSubview(content)
+        //        bg.addSubview(content)
         content.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(25)
             make.right.equalToSuperview().offset(-25)
-//            make.top.equalTo(titleLable.snp.bottom)
+            //            make.top.equalTo(titleLable.snp.bottom)
             make.top.equalTo(titleStr.isEmpty ? bg.snp.top : titleLable.snp.bottom)
             
             make.bottom.equalTo(line.snp.top)
         }
         
-       
+        
     }
     
     @objc func confirmBtnTapped() {
@@ -194,5 +188,17 @@ class XBCommonDialog: UIViewController {
     
     @objc func closeButtonTapped() {
         self.dismiss(animated: true)
+    }
+}
+
+extension UILabel {
+    func lineSpacing(_ spacing: Float) {
+        let paragraphStye = NSMutableParagraphStyle()
+        //调整行间距
+        paragraphStye.lineSpacing = CGFloat(spacing) - font.lineHeight/4
+        paragraphStye.lineBreakMode = NSLineBreakMode.byWordWrapping
+        paragraphStye.alignment = textAlignment
+        let attributedString = NSMutableAttributedString.init(string: text ?? "", attributes: [NSAttributedString.Key.paragraphStyle:paragraphStye])
+        attributedText = attributedString
     }
 }

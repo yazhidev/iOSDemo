@@ -53,45 +53,8 @@ class View1: UIViewController {
             make.top.equalTo(gotoAccount.snp.bottom).offset(30)
         }
         
-        
-         var arr: Array<UIView> = [];
-                for _ in 0..<4 {
-                    let subview = UIView()
-//                    subview.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(256))/255.0,
-//                    green: CGFloat(arc4random_uniform(256))/255.0,
-//                    blue: CGFloat(arc4random_uniform(256))/255.0,
-//                    alpha: 1.0)
-//                    
-                    view.addSubview(subview)
-                    arr.append(subview)
-                }
-        
-        var pre:UIView?
-        var wi = 10
-        for v in arr {
-            v.snp.makeConstraints { (make) in
-                pre == nil ? make.left.equalTo(0) : make.left.equalTo(pre!.snp.right)
-                make.width.equalTo(wi)
-                make.height.equalTo(50).multipliedBy(CGFloat(3))
-                wi += 10
-                pre = v
-            }
-        }
-        pre?.snp.makeConstraints({ (make) in
-            make.right.equalToSuperview()
-        })
-                
-//        //        axisType:方向
-//        //        fixedSpacing:中间间距
-//        //        leadSpacing:左边距(上边距)
-//        //        tailSpacing:右边距(下边距)
-//                arr.snp.distributeViewsAlong(axisType: .horizontal, fixedSpacing: 10, leadSpacing: 10, tailSpacing: 10)
-//        //        上面的可以约束x+w,还需要另外约束y+h
-//        //        约束y和height()如果方向是纵向,那么则另外需要设置x+w
-//                arr.snp.makeConstraints{
-//                    $0.top.equalTo(100)
-//                    $0.height.equalTo(CGFloat(arc4random_uniform(100) + 50))
-//                }
+        //                viewController = CreateLiveClassInfoCompletionViewController()
+        //        viewController = CreateLiveClassSucViewController()
     }
     
     

@@ -13,14 +13,14 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
         var viewModels = [ListDiffable]()
         viewModels.append(DocumentModel(id: "1"))
         if(expanded) {
-        viewModels.append(DocumentModel(id: "2"))
+            viewModels.append(DocumentModel(id: "2"))
         }
         
         return viewModels
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {
-        let cell = collectionContext!.dequeueReusableCell(of: DocumentCell.self, for: self, at: index) as! DocumentCell
+        let cell = collectionContext!.dequeueReusableCell(of: HeaderTitleCell.self, for: self, at: index) as! HeaderTitleCell
         return cell
     }
     
@@ -36,13 +36,13 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
         dataSource = self
     }
     
-    var expanded = false
+    var expanded = true
     
     override func didSelectItem(at index: Int) {
         print("click")
         expanded = !expanded
         update(animated: true)
-//        data?.click?()
+        //        data?.click?()
     }
-
+    
 }

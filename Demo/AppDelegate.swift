@@ -18,10 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.init(frame: UIScreen.main.bounds)
 //        let controller: UIViewController?
-//        controller = View1()
+        viewController = View1()
         //        controller = Charge()
-                viewController = View1()
-        viewController = UINavigationController(rootViewController: viewController!)
+//                viewController = CreateLiveClassInfoCompletionViewController()
+//        viewController = CreateLiveClassSucViewController()
+        
+//        viewController = UINavigationController(rootViewController: viewController!)
         window?.backgroundColor = UIColor.white
         window?.rootViewController = viewController
         return true
