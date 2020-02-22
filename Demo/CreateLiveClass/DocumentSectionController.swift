@@ -39,7 +39,6 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
     var expanded = true
     
     override func didSelectItem(at index: Int) {
-        print("click")
         expanded = !expanded
         update(animated: true)
         //        data?.click?()

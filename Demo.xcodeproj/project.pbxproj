@@ -7,26 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EA289B22401209700DE828A /* MainSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289AE2401209700DE828A /* MainSectionController.swift */; };
-		3EA289B32401209700DE828A /* MainItemConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289AF2401209700DE828A /* MainItemConfigModel.swift */; };
-		3EA289B42401209700DE828A /* MainCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289B02401209700DE828A /* MainCommonCell.swift */; };
-		3EA289B52401209700DE828A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289B12401209700DE828A /* MainViewController.swift */; };
-		42C075D72E575027D82F65B5 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE55BEBCB03387B7F61FD80 /* Pods_Demo.framework */; };
-		596A14E723BED3430053B339 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A14E623BED3430053B339 /* Extension.swift */; };
 		3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */; };
 		3E0AF18D2400437A00BD23E0 /* XBCommonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */; };
 		3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */; };
 		3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19224006EB400BD23E0 /* DocumentModel.swift */; };
 		3E0AF19524006EF800BD23E0 /* DocumentSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */; };
 		3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19624006F4200BD23E0 /* DocumentCell.swift */; };
+		3EA289B22401209700DE828A /* MainSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289AE2401209700DE828A /* MainSectionController.swift */; };
+		3EA289B32401209700DE828A /* MainItemConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289AF2401209700DE828A /* MainItemConfigModel.swift */; };
+		3EA289B42401209700DE828A /* MainCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289B02401209700DE828A /* MainCommonCell.swift */; };
+		3EA289B52401209700DE828A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA289B12401209700DE828A /* MainViewController.swift */; };
 		3EA5F9A32400DCCE006DCD6D /* CreateLiveClassSucViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A22400DCCE006DCD6D /* CreateLiveClassSucViewController.swift */; };
 		3EA5F9A62400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A52400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift */; };
 		3EA5F9A82400E896006DCD6D /* HeadInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A72400E896006DCD6D /* HeadInfoModel.swift */; };
 		3EA5F9AA2400E8A7006DCD6D /* HeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9A92400E8A7006DCD6D /* HeaderSectionController.swift */; };
 		3EA5F9AC2400E8B8006DCD6D /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5F9AB2400E8B8006DCD6D /* HeaderCell.swift */; };
 		42C075D72E575027D82F65B5 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE55BEBCB03387B7F61FD80 /* Pods_Demo.framework */; };
-		592D9A6723C5BBEA00EA701E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592D9A6623C5BBEA00EA701E /* Test.storyboard */; };
-		5991CA1923C2CA770017D189 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1823C2CA770017D189 /* View1.swift */; };
 		59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */; };
 		59ED15F123AB46D100A2E996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED15F023AB46D100A2E996 /* Assets.xcassets */; };
 		59ED15F423AB46D100A2E996 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED15F323AB46D100A2E996 /* Preview Assets.xcassets */; };
@@ -54,24 +50,23 @@
 
 /* Begin PBXFileReference section */
 		277FC38A08B095E31D33144E /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		3EA289AE2401209700DE828A /* MainSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionController.swift; sourceTree = "<group>"; };
-		3EA289AF2401209700DE828A /* MainItemConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemConfigModel.swift; sourceTree = "<group>"; };
-		3EA289B02401209700DE828A /* MainCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCommonCell.swift; sourceTree = "<group>"; };
-		3EA289B12401209700DE828A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		596A14E623BED3430053B339 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirnClearCacheView.swift; sourceTree = "<group>"; };
 		3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBCommonDialog.swift; sourceTree = "<group>"; };
 		3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassViewController.swift; sourceTree = "<group>"; };
 		3E0AF19224006EB400BD23E0 /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
 		3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSectionController.swift; sourceTree = "<group>"; };
 		3E0AF19624006F4200BD23E0 /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
+		3EA289AE2401209700DE828A /* MainSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionController.swift; sourceTree = "<group>"; };
+		3EA289AF2401209700DE828A /* MainItemConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemConfigModel.swift; sourceTree = "<group>"; };
+		3EA289B02401209700DE828A /* MainCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCommonCell.swift; sourceTree = "<group>"; };
+		3EA289B12401209700DE828A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3EA5F9A22400DCCE006DCD6D /* CreateLiveClassSucViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassSucViewController.swift; sourceTree = "<group>"; };
 		3EA5F9A52400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassInfoCompletionViewController.swift; sourceTree = "<group>"; };
 		3EA5F9A72400E896006DCD6D /* HeadInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadInfoModel.swift; sourceTree = "<group>"; };
 		3EA5F9A92400E8A7006DCD6D /* HeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionController.swift; sourceTree = "<group>"; };
 		3EA5F9AB2400E8B8006DCD6D /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		592D9A6623C5BBEA00EA701E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
-		5991CA1823C2CA770017D189 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
+		596A14E623BED3430053B339 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		59ED15E723AB46CF00A2E996 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59ED15F023AB46D100A2E996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,7 +173,6 @@
 				3EA289AD24011F1200DE828A /* Dialog */,
 				3EA5F9A42400E81B006DCD6D /* CreateLiveClassInfoCompletion */,
 				3E0AF18724003A5A00BD23E0 /* CreateLiveClass */,
-				5991CA1823C2CA770017D189 /* View1.swift */,
 				59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */,
 				59ED15F023AB46D100A2E996 /* Assets.xcassets */,
 				59ED15F523AB46D100A2E996 /* LaunchScreen.storyboard */,
@@ -413,7 +407,6 @@
 				3EA289B42401209700DE828A /* MainCommonCell.swift in Sources */,
 				3EA289B52401209700DE828A /* MainViewController.swift in Sources */,
 				59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */,
-				596A14E723BED3430053B339 /* Extension.swift in Sources */,
 				3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */,
 				3EA5F9A32400DCCE006DCD6D /* CreateLiveClassSucViewController.swift in Sources */,
 				59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */,
@@ -422,7 +415,6 @@
 				3EA5F9AA2400E8A7006DCD6D /* HeaderSectionController.swift in Sources */,
 				3EA5F9A82400E896006DCD6D /* HeadInfoModel.swift in Sources */,
 				3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */,
-				5991CA1923C2CA770017D189 /* View1.swift in Sources */,
 				3EA5F9AC2400E8B8006DCD6D /* HeaderCell.swift in Sources */,
 				3EA5F9A62400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift in Sources */,
 				3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */,

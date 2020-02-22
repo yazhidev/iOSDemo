@@ -27,12 +27,15 @@ class MainViewController: UIViewController {
     }()
     
     lazy var items: [MainItemConfigModel] = [
-        MainItemConfigModel(title: "item1", click: {() -> () in
-            print("click item1")
+        MainItemConfigModel(title: "精品课信息填写", click: {() -> () in
+            self.navigationController?.pushViewController(CreateLiveClassInfoCompletionViewController(), animated: true)
         }),
-        MainItemConfigModel(title: "item2", click: {() -> () in
-            print("click item2")
-        })
+        MainItemConfigModel(title: "创建成功", click: {() -> () in
+            self.navigationController?.pushViewController(CreateLiveClassSucViewController(), animated: true)
+        }),
+        MainItemConfigModel(title: "创建精品课", click: {() -> () in
+            self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
+        }),
     ]
     
     open override func viewDidLoad() {
