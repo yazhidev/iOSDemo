@@ -3,3 +3,4 @@ Podfile.lock
 build/
 # Mac OS X Finder and whatnot
 .DS_Store
+Demo.xcworkspace/xcuserdata/
