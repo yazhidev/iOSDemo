@@ -13,19 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 //    var viewController: UINavigationController?
-    var viewController: UIViewController?
+//    var viewController: UIViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-//        let controller: UIViewController?
-        viewController = View1()
+        let controller: UIViewController?
+        controller = MainViewController()
         //        controller = Charge()
-//                viewController = CreateLiveClassInfoCompletionViewController()
-//        viewController = CreateLiveClassSucViewController()
-        
-//        viewController = UINavigationController(rootViewController: viewController!)
+        //        viewController = controller
+//        viewController = UINavigationController(rootViewController: controller!)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = viewController
+        window?.rootViewController = controller
         return true
     }
     
