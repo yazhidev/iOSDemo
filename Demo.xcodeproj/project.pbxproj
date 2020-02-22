@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */; };
 		3E0AF18D2400437A00BD23E0 /* XBCommonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */; };
+		3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */; };
+		3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19224006EB400BD23E0 /* DocumentModel.swift */; };
+		3E0AF19524006EF800BD23E0 /* DocumentSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */; };
+		3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF19624006F4200BD23E0 /* DocumentCell.swift */; };
 		42C075D72E575027D82F65B5 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE55BEBCB03387B7F61FD80 /* Pods_Demo.framework */; };
 		592D9A6723C5BBEA00EA701E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592D9A6623C5BBEA00EA701E /* Test.storyboard */; };
 		5991CA1923C2CA770017D189 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991CA1823C2CA770017D189 /* View1.swift */; };
@@ -41,6 +45,10 @@
 		277FC38A08B095E31D33144E /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirnClearCacheView.swift; sourceTree = "<group>"; };
 		3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBCommonDialog.swift; sourceTree = "<group>"; };
+		3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLiveClassViewController.swift; sourceTree = "<group>"; };
+		3E0AF19224006EB400BD23E0 /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
+		3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSectionController.swift; sourceTree = "<group>"; };
+		3E0AF19624006F4200BD23E0 /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
 		592D9A6623C5BBEA00EA701E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		5991CA1823C2CA770017D189 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
 		59ED15E723AB46CF00A2E996 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +98,10 @@
 			children = (
 				3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */,
 				3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */,
+				3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */,
+				3E0AF19224006EB400BD23E0 /* DocumentModel.swift */,
+				3E0AF19424006EF800BD23E0 /* DocumentSectionController.swift */,
+				3E0AF19624006F4200BD23E0 /* DocumentCell.swift */,
 			);
 			path = CreateLiveClass;
 			sourceTree = "<group>";
@@ -353,7 +365,11 @@
 				3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */,
 				59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */,
 				3E0AF18D2400437A00BD23E0 /* XBCommonDialog.swift in Sources */,
+				3E0AF19524006EF800BD23E0 /* DocumentSectionController.swift in Sources */,
+				3E0AF19724006F4200BD23E0 /* DocumentCell.swift in Sources */,
 				5991CA1923C2CA770017D189 /* View1.swift in Sources */,
+				3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */,
+				3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

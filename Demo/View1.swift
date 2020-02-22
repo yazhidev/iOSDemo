@@ -109,16 +109,16 @@ class View1: UIViewController {
     }
     
     @objc func gotoAccountList() {
-        let vc = XBCommonDialog(title: "标题2", leftBtnText: "确认")
-        vc.confirmBlock = {self.gotoAccountList()}
-        let popup = PopupDialog(viewController: vc,
-                                buttonAlignment: .horizontal,
-                                transitionStyle: .fadeIn,
-                                tapGestureDismissal: true,
-                                panGestureDismissal: false)
-        popup.view.backgroundColor = UIColor.white.withAlphaComponent(0)
-        self.present(popup, animated: true, completion: nil)
-        //        self.navigationController?.pushViewController(TableViewController(), animated: true)
+//        let vc = XBCommonDialog(title: "标题2", leftBtnText: "确认")
+//        vc.confirmBlock = {self.gotoAccountList()}
+//        let popup = PopupDialog(viewController: vc,
+//                                buttonAlignment: .horizontal,
+//                                transitionStyle: .fadeIn,
+//                                tapGestureDismissal: true,
+//                                panGestureDismissal: false)
+//        popup.view.backgroundColor = UIColor.white.withAlphaComponent(0)
+//        self.present(popup, animated: true, completion: nil)
+                self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
     }
     
 }

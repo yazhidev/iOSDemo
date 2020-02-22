@@ -12,6 +12,6 @@ target 'Demo' do
   
   # pod 'SnapKit', '~> 5.0.0'
   pod 'XBBaseUIKit', :path => '../xiaoyu/jyxb_main/children/XBBaseUIKit-swift/'
-  # pod 'IGListKit', '~> 4.0'
+  pod 'IGListKit', '~> 4.0'
 
 end
