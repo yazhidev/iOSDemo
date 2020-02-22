@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-//    var viewController: UINavigationController?
+    var viewController: UINavigationController?
 //    var viewController: UIViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controller = MainViewController()
         //        controller = Charge()
         //        viewController = controller
-//        viewController = UINavigationController(rootViewController: controller!)
+        viewController = UINavigationController(rootViewController: controller!)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = controller
+        window?.rootViewController = viewController
         return true
     }
     

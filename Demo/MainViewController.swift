@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     lazy var items: [MainItemConfigModel] = [
         MainItemConfigModel(title: "item1", click: {() -> () in
             print("click item1")
+//            self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
         }),
         MainItemConfigModel(title: "item2", click: {() -> () in
             print("click item2")
