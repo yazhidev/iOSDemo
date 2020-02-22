@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIColor {
-    convenience init(hexCode: String) {
-        var cString:String = hexCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    convenience init(hex: String) {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
             cString.remove(at: cString.startIndex)
         }
@@ -27,4 +27,4 @@ extension UIColor {
     }
 }
 
-let AppBlue = UIColor(hexCode: "#03B1FF")
+let AppBlue = UIColor(hex: "#03B1FF")
