@@ -8,39 +8,40 @@
 
 import IGListKit
 
-class DocumentSectionController: ListSectionController {
-    var data: DocumentModel?
-    
-    override func numberOfItems() -> Int {
-        return 1
+class DocumentSectionController: ListBindingSectionController<ListDiffable>, ListBindingSectionControllerDataSource {
+    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
+        var viewModels = [ListDiffable]()
+        viewModels.append(DocumentModel(id: "1"))
+        if(expanded) {
+        viewModels.append(DocumentModel(id: "2"))
+        }
+        
+        return viewModels
     }
     
-    override func sizeForItem(at index: Int) -> CGSize {
-        let height = CGFloat(50.0)
-        let wi = collectionContext!.containerSize.width
-        return CGSize(width: wi, height: height)
-    }
-    
-    override func cellForItem(at index: Int) -> UICollectionViewCell {
-        print("index \(index)")
+    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {
         let cell = collectionContext!.dequeueReusableCell(of: DocumentCell.self, for: self, at: index) as! DocumentCell
-        
-//        if let data = data {
-//            cell.config(data)
-//        }
-        
         return cell
     }
     
-    override func didUpdate(to object: Any) {
-        guard let model = object as? DocumentModel else {
-            return
-        }
-        data = model
+    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
+        let height = CGFloat(50.0)
+        let wi = collectionContext!.containerSize.width
+        print("height \(height)")
+        return CGSize(width: wi, height: height)
     }
+    
+    override init() {
+        super.init()
+        dataSource = self
+    }
+    
+    var expanded = false
     
     override func didSelectItem(at index: Int) {
         print("click")
+        expanded = !expanded
+        update(animated: true)
 //        data?.click?()
     }
 

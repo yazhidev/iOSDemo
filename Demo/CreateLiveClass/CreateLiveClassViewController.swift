@@ -26,7 +26,7 @@ class CreateLiveClassViewController: XBViewController {
         return line
     }()
     
-    lazy var items: [DocumentModel] = [DocumentModel(id: "1"), DocumentModel(id: "2")]
+    lazy var items: [DocumentModel] = [DocumentModel(id: "1")]
     
     override func viewDidLoad() {
         self.isStatusBarWhite = false

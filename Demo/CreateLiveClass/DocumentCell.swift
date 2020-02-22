@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IGListKit
 
 class DocumentCell: UICollectionViewCell {
     lazy private var label: UILabel = {
@@ -47,4 +48,11 @@ class DocumentCell: UICollectionViewCell {
 //    func config(_ info: SettingsItemConfigModel) {
 //           config = info
 //       }
+}
+
+
+extension DocumentCell: ListBindable {
+    func bindViewModel(_ viewModel: Any) {
+        print("")
+    }
 }
