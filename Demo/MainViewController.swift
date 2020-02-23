@@ -7,6 +7,7 @@
 
 import UIKit
 import IGListKit
+import JYXBUIComponent_swift
 
 class MainViewController: UIViewController {
     
@@ -36,6 +37,18 @@ class MainViewController: UIViewController {
         MainItemConfigModel(title: "创建精品课", click: {() -> () in
             self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
         }),
+        MainItemConfigModel(title: "选择课程性质", click: {() -> () in
+            let courseCounts = [Int](1...10)
+            var courseCountItems: [JYXBPickerItem] = []
+            for i in courseCounts {
+                courseCountItems.append(JYXBPickerItem.init(description: "\(i)"))
+            }
+            let popView = JYXBPickerPopView.init(items: courseCountItems, originIndex: 1, title: "课时总数")
+            popView.selecteHandle = { [weak self] index in
+                print("select \(index)")
+            }
+            JYXBPopViewManager.default.pop(view: popView)
+        }),
     ]
     
     open override func viewDidLoad() {
@@ -57,7 +70,7 @@ class MainViewController: UIViewController {
         adapter.dataSource = self
     }
     
-  
+    
 }
 
 extension MainViewController: ListAdapterDataSource {
