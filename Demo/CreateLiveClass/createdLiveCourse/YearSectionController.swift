@@ -29,7 +29,7 @@ class YearSectionController: ListSectionController, ListAdapterDataSource, ListD
     
     override func sizeForItem(at index: Int) -> CGSize {
         print("zyz:sizeForItem")
-        return CGSize(width: collectionContext!.containerSize.width, height: 220)
+        return CGSize(width: collectionContext!.containerSize.width, height: 320)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -61,7 +61,7 @@ class YearSectionController: ListSectionController, ListAdapterDataSource, ListD
     override init() {
            super.init()
            displayDelegate = self
-//           inset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right:30)
+           inset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right:10)
        }
     
     func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {

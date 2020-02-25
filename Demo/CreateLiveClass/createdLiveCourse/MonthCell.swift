@@ -14,7 +14,7 @@ class MonthCell: UICollectionViewCell {
     
     lazy var label: UILabel = {
         let view = UILabel()
-        view.backgroundColor = .yellow
+
         view.textAlignment = .left
         view.textColor = .black
         view.font = 18.f
@@ -23,10 +23,11 @@ class MonthCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+//        contentView.backgroundColor = .yellow
         contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.edges.equalToSuperview()
-//                .inset(UIEdgeInsets(top: 5, left: 20, bottom: 30, right: 4))
+                .inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 4))
         }
     }
     

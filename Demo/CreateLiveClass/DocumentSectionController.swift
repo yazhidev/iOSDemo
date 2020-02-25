@@ -9,15 +9,16 @@
 import IGListKit
 
 class DocumentSectionController: ListBindingSectionController<ListDiffable>, ListBindingSectionControllerDataSource {
+    
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
         var viewModels = [ListDiffable]()
-        if(expanded) {
-            viewModels.append(DocumentModel(type: .explain))
-        } else {
-            viewModels.append(DocumentModel(type: .ShowDetail))
-        }
+//        if(expanded) {
+//            viewModels.append(DocumentModel(type: .explain))
+//        } else {
+//            viewModels.append(DocumentModel(type: .ShowDetail))
+//        }
         viewModels.append(DocumentModel(type: .OnSaleTitle))
-//        viewModels.append(DocumentModel(type: .Tip))
+        //        viewModels.append(DocumentModel(type: .Tip))
         return viewModels
     }
     
@@ -32,7 +33,7 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
                 print("canClick")
                 canClick.callback = { [weak self]() in
                     self?.expanded = false
-                    self?.update(animated: false)
+                    //                    self?.update(animated: false)
                 }
             }
         case .ShowDetail:
@@ -42,7 +43,7 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
                 print("canClick")
                 canClick.callback = { [weak self]() in
                     self?.expanded = true
-                    self?.update(animated: false)
+                    //                    self?.update(animated: false)
                 }
             }
         case .OnSaleTitle:
@@ -65,11 +66,77 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
     }
     
     var expanded = false
+
+}
+
+
+class ShowController: ListSectionController {
     
-    override func didSelectItem(at index: Int) {
-        //        expanded = !expanded
-        //        update(animated: true)
-        //        data?.click?()
+    var click: DocumentClick?
+    
+    override func numberOfItems() -> Int {
+        return 1
     }
     
+    override func sizeForItem(at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 35)
+    }
+    
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        let cell = collectionContext!.dequeueReusableCell(of: ShowDocumentCell.self, for: self, at: index)
+        if let canClick = cell as? DocumentCell {
+            print("canClick")
+            canClick.callback = { [weak self]() in
+                self?.click?()
+            }
+        }
+        return cell
+    }
+
+}
+
+class OpenClassTipDetailController: ListSectionController {
+    
+    var click: DocumentClick?
+    
+    override func numberOfItems() -> Int {
+        return 1
+    }
+    
+    override func sizeForItem(at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 280)
+    }
+    
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        let cell = collectionContext!.dequeueReusableCell(of: DocumentDetailCell.self, for: self, at: index)
+        print("is DocumentCell?\( cell as? DocumentCell)")
+        if let canClick = cell as? DocumentCell {
+            print("canClick")
+            canClick.callback = { [weak self]() in
+                self?.click?()
+            }
+        }
+        return cell
+    }
+
+}
+
+class TipController: ListSectionController {
+
+    var click: DocumentClick?
+
+    override func numberOfItems() -> Int {
+        return 1
+    }
+
+    override func sizeForItem(at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 250)
+    }
+
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        let cell = collectionContext!.dequeueReusableCell(of: OnSaleTitleCell.self, for: self, at: index)
+        return cell
+    }
+
+
 }

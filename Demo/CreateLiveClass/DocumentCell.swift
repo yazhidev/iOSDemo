@@ -16,9 +16,9 @@ protocol DocumentCell: ListBindable {
 }
 
 class ShowDocumentCell: UICollectionViewCell, DocumentCell, ListBindable {
-    
+
     var callback: DocumentClick?
-    
+
     func bindViewModel(_ viewModel: Any) {}
     
     lazy private var label: UIButton = {
@@ -29,29 +29,24 @@ class ShowDocumentCell: UICollectionViewCell, DocumentCell, ListBindable {
         view.addTarget(self, action: #selector(click), for: .touchUpInside)
         return view
     }()
+
+    @objc func click() {
+        callback?()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor  = "#FFF0E7".c
         contentView.addSubview(label)
         label.snp.makeConstraints { (make) in
-            make.height.equalTo(60)
             make.edges.equalToSuperview()
         }
     }
-    
-    override func layoutSubviews() {
-        frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 10)
-    }
-    
-    @objc func click() {
-        callback?()
-    }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
 }
 
 

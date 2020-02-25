@@ -22,15 +22,26 @@ final class EmbeddedCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(view)
         return view
     }()
+
+    lazy var bg: UIView = {
+        let v = UIView()
+        v.backgroundColor = .white
+        return v
+    }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        addSubview(bg)
+        bg.addSubview(collectionView)
+        bg.frame = contentView.frame
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        }
         collectionView.backgroundColor = .orange
-        collectionView.frame = contentView.frame
+//        collectionView.frame = contentView.frame
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        
         print("zyz:prefer \(collectionView.contentSize.height)")
         return layoutAttributes
     }
