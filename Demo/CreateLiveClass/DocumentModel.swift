@@ -8,22 +8,28 @@
 
 import IGListKit
 
+enum HeadCellType {
+    case ShowDetail //查看开课说明按钮
+    case explain //开课说明显示中
+    case OnSaleTitle
+    case Tip
+}
+
 class DocumentModel {
-    let id:String
+    let type: HeadCellType
     
-    init(id: String) {
-        self.id = id
+    init(type: HeadCellType) {
+        self.type = type
     }
 }
 
-
 extension DocumentModel: ListDiffable {
     func diffIdentifier() -> NSObjectProtocol {
-        return id as NSObjectProtocol
+        return type.hashValue as NSObjectProtocol
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return id == id
+        return type == type
     }
     
 }

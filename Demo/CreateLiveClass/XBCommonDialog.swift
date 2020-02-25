@@ -195,7 +195,8 @@ extension UILabel {
     func lineSpacing(_ spacing: Float) {
         let paragraphStye = NSMutableParagraphStyle()
         //调整行间距
-        paragraphStye.lineSpacing = CGFloat(spacing) - font.lineHeight/4
+        paragraphStye.lineSpacing = 30.0
+//        paragraphStye.lineSpacing = CGFloat(spacing) - font.lineHeight/4
         paragraphStye.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStye.alignment = textAlignment
         let attributedString = NSMutableAttributedString.init(string: text ?? "", attributes: [NSAttributedString.Key.paragraphStyle:paragraphStye])

@@ -35,7 +35,8 @@ class MainViewController: UIViewController {
             self.navigationController?.pushViewController(CreateLiveClassSucViewController(), animated: true)
         }),
         MainItemConfigModel(title: "创建精品课", click: {() -> () in
-            self.navigationController?.pushViewController(SelfSizingCellsViewController(), animated: true)
+            self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
+//            self.navigationController?.pushViewController(SelfSizingCellsViewController(), animated: true)
         }),
         MainItemConfigModel(title: "选择课程性质", click: {() -> () in
             let courseCounts = [Int](1...10)

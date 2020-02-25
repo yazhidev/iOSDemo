@@ -11,23 +11,52 @@ import IGListKit
 class DocumentSectionController: ListBindingSectionController<ListDiffable>, ListBindingSectionControllerDataSource {
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
         var viewModels = [ListDiffable]()
-        viewModels.append(DocumentModel(id: "1"))
         if(expanded) {
-            viewModels.append(DocumentModel(id: "2"))
+            viewModels.append(DocumentModel(type: .explain))
+        } else {
+            viewModels.append(DocumentModel(type: .ShowDetail))
         }
-        
+        viewModels.append(DocumentModel(type: .OnSaleTitle))
+//        viewModels.append(DocumentModel(type: .Tip))
         return viewModels
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {
-        let cell = collectionContext!.dequeueReusableCell(of: HeaderTitleCell.self, for: self, at: index) as! HeaderTitleCell
+        let model = viewModel as! DocumentModel
+        let cell: UICollectionViewCell & ListBindable
+        switch model.type {
+        case .explain:
+            cell = collectionContext!.dequeueReusableCell(of: ShowDocumentCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
+            print("is DocumentCell?\( cell as? DocumentCell)")
+            if let canClick = cell as? DocumentCell {
+                print("canClick")
+                canClick.callback = { [weak self]() in
+                    self?.expanded = false
+                    self?.update(animated: true)
+                }
+            }
+        case .ShowDetail:
+            cell = collectionContext!.dequeueReusableCell(of: DocumentDetailCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
+            print("is DocumentCell?\( cell as? DocumentCell)")
+            if let canClick = cell as? DocumentCell {
+                print("canClick")
+                canClick.callback = { [weak self]() in
+                    self?.expanded = true
+                    self?.update(animated: false)
+                }
+            }
+        case .OnSaleTitle:
+            cell = collectionContext!.dequeueReusableCell(of: OnSaleTitleCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
+        case .Tip:
+            cell = collectionContext!.dequeueReusableCell(of: CreatedLiveClassMonthCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
+        }
+        
         return cell
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
-        let height = CGFloat(50.0)
+        let height = CGFloat(35.0)
         let wi = collectionContext!.containerSize.width
-        print("height \(height)")
         return CGSize(width: wi, height: height)
     }
     
@@ -36,11 +65,11 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
         dataSource = self
     }
     
-    var expanded = true
+    var expanded = false
     
     override func didSelectItem(at index: Int) {
-        expanded = !expanded
-        update(animated: true)
+        //        expanded = !expanded
+        //        update(animated: true)
         //        data?.click?()
     }
     
