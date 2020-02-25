@@ -70,6 +70,7 @@ class OnSaleTitleCell: UICollectionViewCell, ListBindable {
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        print("zyz:OnSaleTitleCell")
         setNeedsLayout()
         layoutIfNeeded()
         let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)

@@ -18,7 +18,6 @@ class HeaderSectionController : ListBindingSectionController<ListDiffable>, List
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {
-        print("---\(viewModel)")
         let cellClass: UICollectionViewCell.Type
         if(viewModel is HeadInfoModel) {
             let model = viewModel as! HeadInfoModel

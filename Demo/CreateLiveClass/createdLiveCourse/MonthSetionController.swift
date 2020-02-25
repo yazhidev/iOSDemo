@@ -9,7 +9,7 @@
 import Foundation
 import IGListKit
 
-class CreatedMonthSetionController: ListSectionController {
+class MonthSetionController: ListSectionController {
     var data: MonthModel?
     
     override func numberOfItems() -> Int {
@@ -17,22 +17,18 @@ class CreatedMonthSetionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        
         return CGSize(width: collectionContext!.containerSize.width, height: 30)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        let cell = collectionContext!.dequeueReusableCell(of: CreatedLiveClassMonthCell.self, for: self, at: index) as! CreatedLiveClassMonthCell
+        let cell = collectionContext!.dequeueReusableCell(of: MonthCell.self, for: self, at: index) as! MonthCell
         cell.label.text = data?.month
         return cell
     }
     
     override func didUpdate(to object: Any) {
-        print("--didUpdate")
         print(object)
         data = object as? MonthModel
     }
-    
-    
     
 }

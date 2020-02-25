@@ -32,7 +32,7 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
                 print("canClick")
                 canClick.callback = { [weak self]() in
                     self?.expanded = false
-                    self?.update(animated: true)
+                    self?.update(animated: false)
                 }
             }
         case .ShowDetail:
@@ -48,14 +48,13 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
         case .OnSaleTitle:
             cell = collectionContext!.dequeueReusableCell(of: OnSaleTitleCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
         case .Tip:
-            cell = collectionContext!.dequeueReusableCell(of: CreatedLiveClassMonthCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
+            cell = collectionContext!.dequeueReusableCell(of: MonthCell.self, for: self, at: index) as! UICollectionViewCell & ListBindable
         }
-        
         return cell
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
-        let height = CGFloat(35.0)
+        let height = CGFloat(65.0)
         let wi = collectionContext!.containerSize.width
         return CGSize(width: wi, height: height)
     }

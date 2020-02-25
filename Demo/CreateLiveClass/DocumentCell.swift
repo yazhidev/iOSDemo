@@ -35,12 +35,13 @@ class ShowDocumentCell: UICollectionViewCell, DocumentCell, ListBindable {
         contentView.backgroundColor  = "#FFF0E7".c
         contentView.addSubview(label)
         label.snp.makeConstraints { (make) in
+            make.height.equalTo(60)
             make.edges.equalToSuperview()
         }
     }
     
     override func layoutSubviews() {
-        frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 35)
+        frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 10)
     }
     
     @objc func click() {

@@ -20,7 +20,7 @@ class CreateLiveClassViewController: XBViewController {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 100, height: 40)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(red: 0.831_372_549, green: 0.945_098_039, blue: 0.964_705_882, alpha: 1)
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -34,6 +34,7 @@ class CreateLiveClassViewController: XBViewController {
     lazy var items: [ListDiffable] = {
         let yearModel = CreatedLiveClassModel(year: 2020, data: [MonthModel(month: "2月"), MonthModel(month: "3月")])
         return [DocumentModel(type: .explain), yearModel]
+//        return [DocumentModel(type: .explain)]
     }()
     
     override func viewDidLoad() {
@@ -78,7 +79,7 @@ extension CreateLiveClassViewController: ListAdapterDataSource {
             return DocumentSectionController()
             //            return SelfSizingCellsViewController()
         } else if object is CreatedLiveClassModel {
-            return CreatedLiveClassSectionController()
+            return YearSectionController()
         }
         return ListSectionController()
     }
