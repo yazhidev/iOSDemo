@@ -55,7 +55,7 @@ class DocumentSectionController: ListBindingSectionController<ListDiffable>, Lis
     }
     
     func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
-        let height = CGFloat(65.0)
+        let height = CGFloat(60.0)
         let wi = collectionContext!.containerSize.width
         return CGSize(width: wi, height: height)
     }

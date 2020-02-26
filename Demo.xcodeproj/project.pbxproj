@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FB4795A572162176565DA0 /* YearSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4ED02E35AB172E89CD2E /* YearSectionController.swift */; };
+		15FB48481EA5E7F56AA705A5 /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4FB767D9495D9FF1359D /* YearCell.swift */; };
 		3E0AF18924003D3700BD23E0 /* ConfirnClearCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */; };
 		3E0AF18D2400437A00BD23E0 /* XBCommonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */; };
 		3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF18E24006C4700BD23E0 /* CreateLiveClassViewController.swift */; };
@@ -27,7 +29,7 @@
 		5948A9FE2404EECD00731DED /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948A9FD2404EECD00731DED /* TipView.swift */; };
 		5948AA022405163300731DED /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA012405163300731DED /* MonthCell.swift */; };
 		5948AA052405197700731DED /* CreatedLiveClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA042405197700731DED /* CreatedLiveClassModel.swift */; };
-		5948AA0724051B2000731DED /* YearSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA0624051B2000731DED /* YearSectionController.swift */; };
+		5948AA0724051B2000731DED /* CreatedCourseSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA0624051B2000731DED /* CreatedCourseSectionController.swift */; };
 		5948AA0924051C4E00731DED /* MonthSetionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA0824051C4E00731DED /* MonthSetionController.swift */; };
 		5948AA0B24053A9200731DED /* EmbeddedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948AA0A24053A9200731DED /* EmbeddedCollectionViewCell.swift */; };
 		59ED15EB23AB46CF00A2E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED15EA23AB46CF00A2E996 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15FB4ED02E35AB172E89CD2E /* YearSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearSectionController.swift; sourceTree = "<group>"; };
+		15FB4FB767D9495D9FF1359D /* YearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
 		277FC38A08B095E31D33144E /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3E0AF18824003D3700BD23E0 /* ConfirnClearCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirnClearCacheView.swift; sourceTree = "<group>"; };
 		3E0AF18C2400437A00BD23E0 /* XBCommonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBCommonDialog.swift; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		5948A9FD2404EECD00731DED /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		5948AA012405163300731DED /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
 		5948AA042405197700731DED /* CreatedLiveClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedLiveClassModel.swift; sourceTree = "<group>"; };
-		5948AA0624051B2000731DED /* YearSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSectionController.swift; sourceTree = "<group>"; };
+		5948AA0624051B2000731DED /* CreatedCourseSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedCourseSectionController.swift; sourceTree = "<group>"; };
 		5948AA0824051C4E00731DED /* MonthSetionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSetionController.swift; sourceTree = "<group>"; };
 		5948AA0A24053A9200731DED /* EmbeddedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedCollectionViewCell.swift; sourceTree = "<group>"; };
 		596A14E623BED3430053B339 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -170,9 +174,11 @@
 			children = (
 				5948AA012405163300731DED /* MonthCell.swift */,
 				5948AA042405197700731DED /* CreatedLiveClassModel.swift */,
-				5948AA0624051B2000731DED /* YearSectionController.swift */,
+				5948AA0624051B2000731DED /* CreatedCourseSectionController.swift */,
 				5948AA0824051C4E00731DED /* MonthSetionController.swift */,
 				5948AA0A24053A9200731DED /* EmbeddedCollectionViewCell.swift */,
+				15FB4FB767D9495D9FF1359D /* YearCell.swift */,
+				15FB4ED02E35AB172E89CD2E /* YearSectionController.swift */,
 			);
 			path = createdLiveCourse;
 			sourceTree = "<group>";
@@ -462,7 +468,9 @@
 				3EA5F9A62400E848006DCD6D /* CreateLiveClassInfoCompletionViewController.swift in Sources */,
 				3E0AF19324006EB400BD23E0 /* DocumentModel.swift in Sources */,
 				3E0AF18F24006C4700BD23E0 /* CreateLiveClassViewController.swift in Sources */,
-				5948AA0724051B2000731DED /* YearSectionController.swift in Sources */,
+				5948AA0724051B2000731DED /* CreatedCourseSectionController.swift in Sources */,
+				15FB48481EA5E7F56AA705A5 /* YearCell.swift in Sources */,
+				15FB4795A572162176565DA0 /* YearSectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
