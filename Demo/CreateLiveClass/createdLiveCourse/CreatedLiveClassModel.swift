@@ -10,10 +10,10 @@ import Foundation
 import IGListKit
 
 class CreatedLiveClassModel {
-    let year: Int
+    let year: YearModel
     let data: [MonthModel]
     
-    init(year: Int, data: [MonthModel]) {
+    init(year: YearModel, data: [MonthModel]) {
         self.year = year
         self.data = data
     }
@@ -21,7 +21,7 @@ class CreatedLiveClassModel {
 
 extension CreatedLiveClassModel: ListDiffable {
     func diffIdentifier() -> NSObjectProtocol {
-        return year as NSObjectProtocol
+        return year.year as NSObjectProtocol
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
@@ -32,6 +32,21 @@ extension CreatedLiveClassModel: ListDiffable {
     
 }
 
+
+class YearModel : Equatable {
+    static func == (lhs: YearModel, rhs: YearModel) -> Bool {
+        return lhs.year == rhs.year
+    }
+
+    let year: String
+    init(year: String) {
+        self.year = year
+    }
+
+}
+
+
+
 class MonthModel : Equatable {
     
     static func == (lhs: MonthModel, rhs: MonthModel) -> Bool {
@@ -39,8 +54,10 @@ class MonthModel : Equatable {
     }
     
     let month: String
-    init(month: String) {
+    let num: String
+    init(month: String, num: String = "2") {
         self.month = month
+        self.num = num
     }
     
 }
@@ -58,4 +75,15 @@ extension MonthModel: ListDiffable {
     
 }
 
+extension YearModel: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return year as NSObjectProtocol
+    }
+
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard self !== object else { return true }
+        guard let object = object as? YearModel else { return false }
+        return year == object.year
+    }
+}
 

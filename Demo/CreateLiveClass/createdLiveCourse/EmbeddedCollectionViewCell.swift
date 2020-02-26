@@ -16,14 +16,18 @@ final class EmbeddedCollectionViewCell: UICollectionViewCell {
         layout.scrollDirection = .vertical
 //        layout.estimatedItemSize = CGSize(width: 100, height: 40)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.alwaysBounceVertical = false
-        view.alwaysBounceHorizontal = false
+        view.isScrollEnabled = false
+//        view.alwaysBounceHorizontal = false
         self.contentView.addSubview(view)
 
-        view.backgroundColor = .clear
-//        layer.shadowOffset =  CGSize(width: 0, height: 5)
+//        view.backgroundColor = .white
+
+        view.layer.cornerRadius = 6
+        view.layer.backgroundColor = UIColor.white.cgColor
+
+        view.layer.shadowOffset =  CGSize(width: 0, height: 0)
         view.layer.shadowOpacity = 0.8
-        view.layer.shadowColor = "#7CD6F9".c.cgColor
+        view.layer.shadowColor = "#000000".c.withAlphaComponent(0.12).cgColor
         view.layer.shadowRadius = 6
         view.layer.masksToBounds = false
         return view
@@ -41,13 +45,12 @@ final class EmbeddedCollectionViewCell: UICollectionViewCell {
         bg.addSubview(collectionView)
         bg.frame = contentView.frame
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15))
         }
 //        collectionView.frame = contentView.frame
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        print("zyz:prefer \(collectionView.contentSize.height)")
         return layoutAttributes
     }
     

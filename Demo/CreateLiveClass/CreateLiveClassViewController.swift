@@ -32,9 +32,10 @@ class CreateLiveClassViewController: XBViewController {
     
     
     lazy var items: [ListDiffable] = {
-        let yearModel = CreatedLiveClassModel(year: 2020, data: [MonthModel(month: "2月"), MonthModel(month: "3月")])
-//        return [DocumentModel(type: .explain), DocumentModel(type: .OnSaleTitle), yearModel]
-        return [yearModel]
+        let yearModel = CreatedLiveClassModel(year: YearModel(year: "2020"), data: [MonthModel(month: "2月"), MonthModel(month: "3月")])
+        let yearModel2 = CreatedLiveClassModel(year: YearModel(year: "2021"), data: [MonthModel(month: "3月"), MonthModel(month: "6月")])
+        return [DocumentModel(type: .explain), DocumentModel(type: .OnSaleTitle), yearModel, yearModel2]
+//        return [yearModel, yearModel2]
     }()
     
     override func viewDidLoad() {
@@ -79,7 +80,6 @@ extension CreateLiveClassViewController: ListAdapterDataSource {
             let model = object as! DocumentModel
             switch model.type {
             case .ShowDetail:
-                print("zyz:ShowDetail")
                 let c = ShowController()
                 c.click = {() in
                     print("zyz:click")

@@ -31,7 +31,7 @@ class MonthCell: UICollectionViewCell {
 
     lazy var numLable: UILabel = {
         let view = UILabel()
-        view.textColor = "##FF5E00".c
+        view.textColor = "#FF5E00".c
         view.text = "4"
         view.font = 16.f
         return view
