@@ -23,9 +23,9 @@ class MonthSetionController: ListSectionController {
     }
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        let cell = collectionContext!.dequeueReusableCell(of: MonthCell.self, for: self, at: index) as! MonthCell
-        cell.label.text = data!.month
-        cell.numLable.text = data!.num
+        let cell = collectionContext!.dequeueReusableCell(of: MonthCell.self, for: self, at: index) as! UICollectionViewCell
+//        cell.label.text = data!.month
+//        cell.numLable.text = data!.num
         return cell
     }
 

@@ -7,30 +7,27 @@
 //
 
 import UIKit
+import XBBaseUIKit
+
+typealias ClickBlock = () -> Void
 
 class XBCommonDialog: UIViewController {
     
-    typealias ConfirmBlock = () -> Void
+    private var leftBtn: BtnConfig?
+    private var rightBtn: BtnConfig?
+    private var centerBtn: BtnConfig?
+    private var titleStr:String
+    private var contentStr:String
     
-    var confirmBlock: ConfirmBlock?
-    
-    var titleStr:String
-    var contentStr:String
-    var leftBtnText:String
-    var rightBtnText:String
-    var centerBtnText: String = ""
-    
-    let size = CGSize.init(width: 270, height: 403)
-    
-    init(title: String = "", content: String = "", leftBtnText: String = "", rightBtnText: String = "") {
+    init(title: String = "", content: String = "", leftBtn: BtnConfig? = nil, rightBtn: BtnConfig? = nil) {
         titleStr = title
         self.contentStr = content
-        self.leftBtnText = leftBtnText
-        self.rightBtnText = rightBtnText
-        if(leftBtnText.isEmpty && !rightBtnText.isEmpty ) {
-            centerBtnText = rightBtnText
-        } else if(!leftBtnText.isEmpty && rightBtnText.isEmpty ) {
-            centerBtnText = leftBtnText
+        self.leftBtn = leftBtn
+        self.rightBtn = rightBtn
+        if(leftBtn == nil && rightBtn != nil) {
+            centerBtn = rightBtn
+        } else if(leftBtn != nil && rightBtn == nil) {
+            centerBtn = leftBtn
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,7 +35,6 @@ class XBCommonDialog: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     private lazy var bg: UIView = {
         let bg = UIView()
@@ -48,31 +44,31 @@ class XBCommonDialog: UIViewController {
         return bg
     }()
     
-    private lazy var cancel: UIButton = {
+    private lazy var leftButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(leftBtnText, for: .normal)
+        btn.setTitle(leftBtn?.text, for: .normal)
         btn.setTitleColor(UIColor(hex:"#35CBDB"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        btn.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         return btn
     }()
     
-    private lazy var confirm: UIButton = {
+    private lazy var rightButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(rightBtnText, for: .normal)
+        btn.setTitle(rightBtn?.text, for: .normal)
         btn.setTitleColor(UIColor(hex:"#35CBDB"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        btn.addTarget(self, action: #selector(confirmBtnTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(rightBtnTapped), for: .touchUpInside)
         return btn
     }()
     
     
-    private lazy var centerBtn: UIButton = {
+    private lazy var centerButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(centerBtnText, for: .normal)
+        btn.setTitle(centerBtn?.text, for: .normal)
         btn.setTitleColor(UIColor(hex:"#35CBDB"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        btn.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(centerButtonTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -86,20 +82,17 @@ class XBCommonDialog: UIViewController {
         let btn = UIButton()
         btn.setTitle(titleStr, for: .normal)
         btn.setTitleColor("#222222".c, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleLabel?.font = 18.bf
         return btn
     }()
     
     private lazy var content: UILabel = {
         let tv = UILabel()
         tv.numberOfLines = 0
-        tv.text = contentStr
+        tv.attributedText = contentStr.hw_toAttribute().hw_addLineSpace(5)
         tv.textColor = "#333333".c
         tv.font = 15.f
         tv.textAlignment = .center
-        
-        let lineHeight = CGFloat(10.0)
-        tv.lineSpacing(9.0)
         return tv
     }()
     
@@ -115,15 +108,12 @@ class XBCommonDialog: UIViewController {
     
     
     func makeUI () {
-        
-        view.snp.makeConstraints { (make) in
-            make.size.equalTo(size)
-        }
-        
+        //
         view.addSubview(bg)
         bg.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.size.equalTo(size)
+            make.width.equalTo(270)
+            make.top.bottom.equalToSuperview()
         }
         
         bg.addSubview(line)
@@ -133,22 +123,22 @@ class XBCommonDialog: UIViewController {
             make.height.equalTo(0.5)
         }
         
-        if(centerBtnText.isEmpty) {
-            bg.addSubview(cancel)
-            cancel.snp.makeConstraints { (make) in
+        if(centerBtn == nil) {
+            bg.addSubview(leftButton)
+            leftButton.snp.makeConstraints { (make) in
                 make.left.bottom.equalToSuperview()
                 make.top.equalTo(line.snp.bottom)
             }
-            bg.addSubview(confirm)
-            confirm.snp.makeConstraints { (make) in
-                make.left.equalTo(cancel.snp.right)
-                make.width.equalTo(cancel)
+            bg.addSubview(rightButton)
+            rightButton.snp.makeConstraints { (make) in
+                make.left.equalTo(leftButton.snp.right)
+                make.width.equalTo(leftButton)
                 make.top.equalTo(line.snp.bottom)
                 make.right.bottom.equalToSuperview()
             }
         } else {
-            bg.addSubview(centerBtn)
-            centerBtn.snp.makeConstraints { (make) in
+            bg.addSubview(centerButton)
+            centerButton.snp.makeConstraints { (make) in
                 make.left.right.bottom.equalToSuperview()
                 make.top.equalTo(line.snp.bottom)
             }
@@ -156,38 +146,77 @@ class XBCommonDialog: UIViewController {
         
         bg.addSubview(content)
         
+        let edge = UIEdgeInsets(top: 25, left: 25, bottom: 15, right: 25)
+        
         if(!titleStr.isEmpty) {
-            bg.addSubview(titleLable)
-            
+            let container = UIStackView()
+            container.spacing = 14
+            container.axis = .vertical
+            container.distribution = .fill
+            container.addArrangedSubview(titleLable)
+            container.addArrangedSubview(content)
+            bg.addSubview(container)
+            container.snp.makeConstraints {
+                $0.left.right.equalToSuperview().inset(edge)
+                $0.top.equalTo(bg.snp.top).offset(25)
+                $0.bottom.equalTo(line.snp.top).offset(-25)
+            }
             titleLable.snp.makeConstraints { (make) in
-                make.top.equalToSuperview().offset(25)
-                make.left.right.equalToSuperview()
-                make.bottom.equalTo(content.snp.top)
+                make.centerX.equalToSuperview()
+            }
+        } else {
+            content.snp.makeConstraints { (make) in
+                make.left.right.equalToSuperview().inset(edge)
+                make.top.equalTo(bg.snp.top).offset(25)
+                make.bottom.equalTo(line.snp.top).offset(-15)
             }
         }
         
-        //        bg.addSubview(content)
-        content.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(25)
-            make.right.equalToSuperview().offset(-25)
-            //            make.top.equalTo(titleLable.snp.bottom)
-            make.top.equalTo(titleStr.isEmpty ? bg.snp.top : titleLable.snp.bottom)
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
+        let newSize = view.systemLayoutSizeFitting(size)
+        print("\(newSize.width)")
+        view.frame.size = newSize
+        //        let size = .systemLayoutSizeFitting(layoutAttributes.size)
+        //        var newFrame = layoutAttributes.frame
+        // note: don't change the width
+        //        newFrame.size.height = ceil(size.height)
+        //        layoutAttributes.frame = newFrame
+        //        return layoutAttributes
+        
+    }
+    
+    let size = CGSize.init(width: 100, height: 100)
+    
+    @objc func rightBtnTapped() {
+        if let config = rightBtn {
+            config.click?()
+            if(config.dismissOnTap) {
+                    dismiss(animated: true)
+            }
             
-            make.bottom.equalTo(line.snp.top)
         }
-        
-        
+       
     }
     
-    @objc func confirmBtnTapped() {
-        if let block = confirmBlock {
-            block()
+    @objc func leftButtonTapped() {
+        if let config = leftBtn {
+            config.click?()
+            if(config.dismissOnTap) {
+                    dismiss(animated: true)
+            }
+            
         }
-        self.dismiss(animated: true)
     }
     
-    @objc func closeButtonTapped() {
-        self.dismiss(animated: true)
+    @objc func centerButtonTapped() {
+        if let config = centerBtn {
+            config.click?()
+            if(config.dismissOnTap) {
+                    dismiss(animated: true)
+            }
+            
+        }
     }
 }
 
@@ -196,10 +225,22 @@ extension UILabel {
         let paragraphStye = NSMutableParagraphStyle()
         //调整行间距
         paragraphStye.lineSpacing = 30.0
-//        paragraphStye.lineSpacing = CGFloat(spacing) - font.lineHeight/4
+        //        paragraphStye.lineSpacing = CGFloat(spacing) - font.lineHeight/4
         paragraphStye.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStye.alignment = textAlignment
         let attributedString = NSMutableAttributedString.init(string: text ?? "", attributes: [NSAttributedString.Key.paragraphStyle:paragraphStye])
         attributedText = attributedString
+    }
+}
+
+struct BtnConfig {
+    var text: String
+    var click: ClickBlock?
+    var dismissOnTap: Bool
+    
+    init(text: String, click: ClickBlock? = nil, dismissOnTap: Bool = true) {
+        self.text = text
+        self.click = click
+        self.dismissOnTap = dismissOnTap
     }
 }

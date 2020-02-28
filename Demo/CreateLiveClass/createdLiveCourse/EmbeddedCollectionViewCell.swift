@@ -47,7 +47,6 @@ final class EmbeddedCollectionViewCell: UICollectionViewCell {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15))
         }
-//        collectionView.frame = contentView.frame
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

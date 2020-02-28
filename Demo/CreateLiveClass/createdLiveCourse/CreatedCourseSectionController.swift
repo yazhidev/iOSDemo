@@ -62,7 +62,6 @@ class CreatedCourseSectionController: ListSectionController, ListAdapterDataSour
 
     override func didUpdate(to object: Any) {
         data = object as? CreatedLiveClassModel
-        let height = collection?.contentSize.height
     }
 
 }
