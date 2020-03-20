@@ -28,13 +28,14 @@ class MainViewController: UIViewController {
     
     lazy var items: [MainItemConfigModel] = [
         MainItemConfigModel(title: "item1", click: {() -> () in
-            print("click item1")
-//            self.navigationController?.pushViewController(CreateLiveClassViewController(), animated: true)
+            self.navigationController?.pushViewController(PageVC(), animated: true)
         }),
         MainItemConfigModel(title: "item2", click: {() -> () in
             print("click item2")
         })
     ]
+
+    lazy var testView = TestView(title: "A")
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,13 @@ class MainViewController: UIViewController {
         }
         adapter.collectionView = collectionView
         adapter.dataSource = self
+
+        testView.backgroundColor = .red
+        view.addSubview(testView)
+        testView.snp.makeConstraints {
+            $0.size.equalTo(CGSize(width: 100, height: 100))
+            $0.center.equalToSuperview()
+        }
     }
     
   

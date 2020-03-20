@@ -40,6 +40,8 @@ class MainCommonCell: UICollectionViewCell {
     }()
     
     var config: MainItemConfigModel?
+
+    var  test = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +60,7 @@ class MainCommonCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().offset(-33.5)
         }
-        
+
         contentView.addSubview(arrow)
         arrow.snp.makeConstraints { (make) in
             make.width.equalTo(6.5)
