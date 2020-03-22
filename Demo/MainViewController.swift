@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
             self.navigationController?.pushViewController(PageVC(), animated: true)
         }),
         MainItemConfigModel(title: "item2", click: {() -> () in
-            print("click item2")
+            self.testView.removeFromSuperview()
         })
     ]
 

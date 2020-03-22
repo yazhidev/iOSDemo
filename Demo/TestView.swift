@@ -37,4 +37,24 @@ class TestView: UIView {
         super.willMove(toSuperview: newSuperview)
         print("=== \(title)  willMove toSuperview \(newSuperview)")
     }
+
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        print("=== \(title)  didMoveToSuperview")
+    }
+
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        print("=== \(title)  didMoveToWindow")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("=== \(title)  layoutSubviews")
+    }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        print("=== \(title)  draw")
+    }
 }
